@@ -14,12 +14,7 @@ M.ui = {
 }
 
 M.plugins = {
-  user = {
-      ["folke/which-key.nvim"] = {
-         disable = false,
-      },
-  },
-  -- user = require "custom.plugins",
+  user = require "custom.plugins",
   override = {
     -- ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
     ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
@@ -29,6 +24,6 @@ M.plugins = {
   },
 }
 
--- M.mappings = require "custom.mappings"
+M.mappings = require "custom.mappings"
 
 return M
