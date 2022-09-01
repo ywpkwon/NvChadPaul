@@ -11,7 +11,10 @@ M.disabled = {
 M.convenience = {
   n = {
     [";"] = { ":", ":"}
-  }
+  },
+  i = {
+    ["jk"] = { "<esc>l", "escape to normal mode"}
+  },
 }
 
 M.navigation = {
@@ -26,6 +29,7 @@ M.windows = {
     ["<leader>w|"] = { "<cmd>:vsplit<cr>", "split window vertically" },
     ["<leader>w-"] = { "<cmd>:split<cr>", "split window horizontally" },
     ["<leader>wq"] = { "<cmd>:q<cr>", "quit" },
+    ["<leader>wQ"] = { "<cmd>:q!<cr>", "quit!" },
     ["<leader>ws"] = { "<cmd>:w<cr>", "save" },
   }
 }
