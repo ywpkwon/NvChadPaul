@@ -8,6 +8,12 @@ M.disabled = {
   }
 }
 
+M.convenience = {
+  n = {
+    [";"] = { ":", ":"}
+  }
+}
+
 M.navigation = {
   n = {
     ["H"] = { "^", "beginning of line" },
@@ -20,6 +26,7 @@ M.windows = {
     ["<leader>w|"] = { "<cmd>:vsplit<cr>", "split window vertically" },
     ["<leader>w-"] = { "<cmd>:split<cr>", "split window horizontally" },
     ["<leader>wq"] = { "<cmd>:q<cr>", "quit" },
+    ["<leader>ws"] = { "<cmd>:w<cr>", "save" },
   }
 }
 
@@ -35,12 +42,15 @@ M.toggle = {
       ["<leader>oN"] = { "<cmd> NvimTreeFocus <CR>", "   focus nvimtree" },
       ["<leader>on"] = { "<cmd> NvimTreeToggle <CR>", "   toggle nvimtree" },
       ["<leader>or"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
-      ["<leader>ot"] = { 
+      ["<leader>ot"] = {
         function()
           require("base46").toggle_theme()
         end,
         "toggle theme",
       },
+      ["<leader>ogm"] = { "<cmd> TZMinimalist <CR>", "toggle zen-minimal" },
+      ["<leader>ogf"] = { "<cmd> TZFocus <CR>", "toggle zen-focus" },
+      ["<leader>oga"] = { "<cmd> TZAtaraxis<CR>", "toggle zen-artar" },
    },
 }
 
@@ -66,6 +76,30 @@ M.telescope = {
 
     -- theme switcher
     ["<leader>th"] = { "<cmd> Telescope themes <CR>", "nvchad themes" },
+  },
+}
+
+M.packer = {
+  n = {
+    ["<leader>pi"] = { "<cmd> PackerStatus  <CR>", "packer status" },
+    ["<leader>pc"] = { "<cmd> PackerCompile <CR>", "packer compile" },
+    ["<leader>ps"] = { "<cmd> PackerSync    <CR>", "packer sync" },
+  },
+}
+
+M.easymotion = {
+  n = {
+    ["<leader>ml"] = { "<cmd> HopLineMW     <CR>", "hop to line" },
+    ["<leader>ma"] = { "<cmd> HopAnywhereMW <CR>", "hop to anywhere" },
+    ["<leader>mw"] = { "<cmd> HopWordMW     <CR>", "hop to word" },
+  },
+}
+
+M.lsp = {
+  n = {
+    ["<leader>ml"] = { "<cmd> HopLineMW     <CR>", "hop to line" },
+    ["<leader>ma"] = { "<cmd> HopAnywhereMW <CR>", "hop to anywhere" },
+    ["<leader>mw"] = { "<cmd> HopWordMW     <CR>", "hop to word" },
   },
 }
 

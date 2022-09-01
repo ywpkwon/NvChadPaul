@@ -10,7 +10,9 @@ return {
         --insert any whichkey opts here
         t = {name = "telescope",},
         w = {name = "window",},
-        o = {name = "toggle",}
+        o = {name = "toggle",},
+        m = {name = "easy motion",},
+        l = {name = "lsp",},
       }, {prefix = "<leader>"})
     end
   },
@@ -23,4 +25,21 @@ return {
   },
 
   ["alexghergh/nvim-tmux-navigation"] = {},
+
+  ["Pocco81/true-zen.nvim"] = {
+    config = function()
+      require("true-zen").setup {
+      -- your config goes here
+      -- or just leave it empty :)
+      }
+    end,
+  },
+
+  ['phaazon/hop.nvim'] = {
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end,
+  },
 }
