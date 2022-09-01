@@ -30,6 +30,12 @@ M.nvimtree = {
       },
     },
   },
+
+  actions = {
+    open_file = {
+      resize_window = true
+    }
+  }
 }
 
 M.blankline = {
