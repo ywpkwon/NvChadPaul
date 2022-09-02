@@ -4,7 +4,16 @@ local M = {}
 M.disabled = {
   n = {
       ["<C-n>"] = "",
-      ["<leader>n"] = ""
+      ["<leader>n"] = "",
+      -- default lsp mappings
+      ["<leader>f"] = "",
+      ["<leader>q"] = "",
+      ["[d"] = "",
+      ["d]"] = "",
+      ["gD"] = "",
+      ["gd"] = "",
+      ["gi"] = "",
+      ["gr"] = "",
   }
 }
 
@@ -99,11 +108,63 @@ M.easymotion = {
   },
 }
 
-M.lsp = {
+M.lspconfig = {
+  plugin = true,
   n = {
-    ["<leader>ml"] = { "<cmd> HopLineMW     <CR>", "hop to line" },
-    ["<leader>ma"] = { "<cmd> HopAnywhereMW <CR>", "hop to anywhere" },
-    ["<leader>mw"] = { "<cmd> HopWordMW     <CR>", "hop to word" },
+    ["<leader>lk"] = {
+      function()
+        vim.diagnostic.goto_prev()
+      end,
+      "lsp goto_prev",
+    },
+    ["<leader>lj"] = {
+      function()
+        vim.diagnostic.goto_next()
+      end,
+      "lsp goto_next",
+    },
+    ["<leader>ls"] = {
+      function()
+        vim.diagnostic.open_float()
+      end,
+      "lsp show",
+    },
+    ["<leader>lr"] = {
+      function()
+        vim.lsp.buf.references()
+      end,
+      "lsp references",
+    },
+    ["<leader>lf"] = {
+      function()
+        vim.lsp.buf.formatting {}
+      end,
+      "lsp formatting",
+    },
+    ["<leader>lq"] = {
+      function()
+        vim.diagnostic.setloclist()
+      end,
+      "lsp setloclist",
+    },
+    ["<leader>lD"] = {
+      function()
+        vim.lsp.buf.declaration()
+      end,
+      "lsp declaration",
+    },
+    ["<leader>ld"] = {
+      function()
+        vim.lsp.buf.definition()
+      end,
+      "lsp definition",
+    },
+    ["<leader>li"] = {
+      function()
+        vim.lsp.buf.implementation()
+      end,
+      "lsp implementation",
+    },
   },
 }
 
