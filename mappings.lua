@@ -30,7 +30,11 @@ M.navigation = {
   n = {
     ["H"] = { "^", "beginning of line" },
     ["L"] = { "$", "end of line" },
-  }
+  },
+  v = {
+    ["H"] = { "^", "beginning of line" },
+    ["L"] = { "$", "end of line" },
+  },
 }
 
 M.windows = {
