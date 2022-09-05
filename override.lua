@@ -42,9 +42,8 @@ M.nvimtree = {
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
-        -- { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        -- { key = "h", cb = tree_cb "close_node" },
-        -- { key = "v", cb = tree_cb "vsplit" },
+        { key = "v", action = "vsplit" },
+        { key = "h", action = "split" },
       },
     },
   },
