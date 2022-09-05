@@ -68,6 +68,7 @@ M.toggle = {
       ["<leader>ogm"] = { "<cmd> TZMinimalist <CR>", "toggle zen-minimal" },
       ["<leader>ogf"] = { "<cmd> TZFocus <CR>", "toggle zen-focus" },
       ["<leader>oga"] = { "<cmd> TZAtaraxis<CR>", "toggle zen-artar" },
+      ["Z"] = { "<cmd> TZFocus <CR>", "toggle zen-focus" },
    },
 }
 
