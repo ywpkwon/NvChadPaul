@@ -4,7 +4,7 @@ return {
     disable = false,
     config = function()
       require "plugins.configs.whichkey"
-      -- add your whichkey stuff here i.e make another file 
+      -- add your whichkey stuff here i.e make another file
       local wk = require("which-key")
       wk.register({
         --insert any whichkey opts here
@@ -20,7 +20,8 @@ return {
   ["goolord/alpha-nvim"] = {
     disable = false,
     config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
+      -- require "custom.plugins.alpha"
+      require'alpha'.setup(require'alpha.themes.startify'.config)
     end
   },
 
