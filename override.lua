@@ -46,9 +46,11 @@ M.nvimtree = {
         { key = "h", action = "split" },
       },
     },
+    hide_root_folder = false,
   },
   git = {
     enable = true,
+    ignore = false,
   },
   renderer = {
     highlight_git = true,
