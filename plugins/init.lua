@@ -59,4 +59,65 @@ return {
         })
     end
   },
+
+  ['gelguy/wilder.nvim'] = {
+    config = function()
+      -- config goes here
+      local wilder = require('wilder')
+      wilder.setup({modes = {':', '/'}})
+      -- wilder.setup({modes = {':', '/', '?'}})
+
+      wilder.set_option('pipeline', {
+        wilder.branch(
+          -- wilder.python_file_finder_pipeline({
+          --       -- to use ripgrep : {'rg', '--files'}
+          --       -- to use fd      : {'fd', '-tf'}
+          --       file_command = {'find', '.', '-type', 'f', '-printf', '%P\n'},
+          --       -- to use fd      : {'fd', '-td'}
+          --       dir_command = {'find', '.', '-type', 'd', '-printf', '%P\n'},
+          --       -- use {'cpsm_filter'} for performance, requires cpsm vim plugin
+          --       -- found at https://github.com/nixprime/cpsm
+          --       filters = {'fuzzy_filter', 'difflib_sorter'},
+          --     }),
+          wilder.cmdline_pipeline({
+            language = 'python',
+            fuzzy = 1,
+            set_pcre2_pattern = 1,
+          }),
+          wilder.python_search_pipeline({
+            pattern = 'fuzzy',
+          })
+        ),
+      })
+
+      local highlighters = {
+        wilder.pcre2_highlighter(),
+        wilder.lua_fzy_highlighter(),
+      }
+
+      local popupmenu_renderer = wilder.popupmenu_renderer(
+        wilder.popupmenu_border_theme({
+          highlighter = highlighters,
+          highlights = {
+            accent = wilder.make_hl('WilderAccent', 'Pmenu', {{a = 1}, {a = 1}, {foreground = '#f4468f'}}),
+            border = 'Normal', -- highlight to use for the border
+          },
+          border = 'rounded',  -- 'single', 'double', 'rounded' or 'solid'
+        })
+      )
+
+      local wildmenu_renderer = wilder.wildmenu_renderer({
+        highlighter = highlighters,
+        separator = ' · ',
+        left = {' ', wilder.wildmenu_spinner(), ' '},
+        right = {' ', wilder.wildmenu_index()},
+      })
+
+      wilder.set_option('renderer', wilder.renderer_mux({
+        [':'] = popupmenu_renderer,
+        ['/'] = wildmenu_renderer,
+        substitute = wildmenu_renderer,
+      }))
+    end,
+  }
 }
