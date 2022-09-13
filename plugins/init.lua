@@ -61,6 +61,7 @@ return {
   },
 
   ['gelguy/wilder.nvim'] = {
+    run = ':UpdateRemotePlugins',
     config = function()
       -- config goes here
       local wilder = require('wilder')
