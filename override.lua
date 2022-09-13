@@ -21,6 +21,13 @@ M.treesitter = {
 -- local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
 -- local tree_cb = nvim_tree_config.nvim_tree_callback
 M.nvimtree = {
+  disable_netrw = true,
+  hijack_netrw = true,
+  open_on_setup = false,
+  ignore_ft_on_setup = { "alpha" },
+  hijack_cursor = true,
+  hijack_unnamed_buffer_when_opening = false,
+  update_cwd = true,
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -36,9 +43,10 @@ M.nvimtree = {
     },
   },
   view = {
-    width = 30,
-    height = 30,
+    adaptive_size = true,
     side = "left",
+    width = 25,
+    hide_root_folder = false,
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
@@ -46,14 +54,30 @@ M.nvimtree = {
         { key = "h", action = "split" },
       },
     },
-    hide_root_folder = false,
+    -- float = {
+    --   enable = true,
+    --   open_win_config = {
+    --       relative = "editor",
+    --       width = 30,
+    --       height = 30,
+    --       row = 8,
+    --       column = 35
+    --   }
+    -- }
   },
   git = {
     enable = true,
     ignore = false,
   },
+  actions = {
+    open_file = {
+      resize_window = true,
+    }
+  },
   renderer = {
     highlight_git = true,
+    highlight_opened_files = "none",
+
     root_folder_modifier = ":t",
     icons = {
       show = {
@@ -83,11 +107,6 @@ M.nvimtree = {
         },
       },
     },
-  },
-  actions = {
-    open_file = {
-      resize_window = true
-    }
   },
 }
 
