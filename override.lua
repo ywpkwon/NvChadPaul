@@ -54,16 +54,16 @@ M.nvimtree = {
         { key = "h", action = "split" },
       },
     },
-    -- float = {
-    --   enable = true,
-    --   open_win_config = {
-    --       relative = "editor",
-    --       width = 30,
-    --       height = 30,
-    --       row = 8,
-    --       column = 35
-    --   }
-    -- }
+    float = {
+      enable = true,
+      -- open_win_config = {
+      --     relative = "editor",
+      --     width = 30,
+      --     height = 30,
+      --     row = 8,
+      --     column = 35
+      -- }
+    }
   },
   git = {
     enable = true,
