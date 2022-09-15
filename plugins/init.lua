@@ -17,13 +17,13 @@ return {
     end
   },
 
-  ["goolord/alpha-nvim"] = {
-    disable = false,
-    config = function ()
-      -- require "custom.plugins.alpha"
-      require'alpha'.setup(require'alpha.themes.startify'.config)
-    end
-  },
+  -- ["goolord/alpha-nvim"] = {
+  --   disable = false,
+  --   config = function ()
+  --     -- require "custom.plugins.alpha"
+  --     require'alpha'.setup(require'alpha.themes.startify'.config)
+  --   end
+  -- },
 
   ["neovim/nvim-lspconfig"] = {
     config = function()
