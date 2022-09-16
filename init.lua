@@ -1,3 +1,4 @@
+
 -- autocmds
 local autocmd = vim.api.nvim_create_autocmd
 
@@ -23,3 +24,10 @@ for _, plugin in pairs(enable_providers) do
   vim.g["loaded_" .. plugin] = nil
   vim.cmd("runtime " .. plugin)
 end
+
+-- vim options
+local opt = vim.opt
+
+opt.wrap = false
+opt.linebreak = false
+opt.list = false
