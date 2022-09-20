@@ -136,8 +136,15 @@ return {
       vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)")
 
       -- telescope picker
-      require("telescope").load_extension("yank_history")
+      -- require("telescope").load_extension("yank_history")
     end
+  },
 
+  -- code formatting, linting etc
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require "custom.plugins.null-ls"
+    end,
   },
 }
