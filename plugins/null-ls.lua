@@ -26,7 +26,7 @@ local sources = {
   -- python
   b.formatting.fixjson,
   b.formatting.black,
-  b.diagnostics.flake8,
+  b.diagnostics.pycodestyle,
 }
 
 null_ls.setup {

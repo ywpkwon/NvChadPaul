@@ -29,6 +29,13 @@ return {
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.plugins.lspconfig"
+
+      vim.diagnostic.config({
+        float = {
+          source = "if_many",  -- Or "if_many"
+        },
+      })
+
     end,
   },
 

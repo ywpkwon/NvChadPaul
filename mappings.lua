@@ -118,19 +118,19 @@ M.lspconfig = {
   n = {
     ["<leader>lk"] = {
       function()
-        vim.diagnostic.goto_prev()
+        vim.diagnostic.goto_prev({ float = { border = 'rounded' }})
       end,
       "lsp goto_prev",
     },
     ["<leader>lj"] = {
       function()
-        vim.diagnostic.goto_next()
+        vim.diagnostic.goto_next({ float = { border = 'rounded' }})
       end,
       "lsp goto_next",
     },
     ["<leader>ls"] = {
       function()
-        vim.diagnostic.open_float()
+        vim.diagnostic.open_float({ border = 'rounded' })
       end,
       "lsp show",
     },
