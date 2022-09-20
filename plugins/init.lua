@@ -120,5 +120,24 @@ return {
         substitute = wildmenu_renderer,
       }))
     end,
-  }
+  },
+
+  ['gbprod/yanky.nvim'] = {
+    config = function()
+      require("yanky").setup({
+        -- your configuration comes here
+        -- otherwise default.
+      })
+
+      -- keybind
+      vim.keymap.set("n", "<c-n>", "<Plug>(YankyCycleForward)")
+      vim.keymap.set("n", "<c-p>", "<Plug>(YankyCycleBackward)")
+      vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)")
+      vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)")
+
+      -- telescope picker
+      require("telescope").load_extension("yank_history")
+    end
+
+  },
 }
