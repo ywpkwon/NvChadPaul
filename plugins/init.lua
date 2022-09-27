@@ -154,4 +154,22 @@ return {
       require "custom.plugins.null-ls"
     end,
   },
+
+  -- code navigation
+  [ 'kevinhwang91/nvim-fFHighlight' ] = {
+    config = function()
+      -- vim.cmd([[
+      --     hi fFHintChar ctermfg=yellow cterm=bold,undercurl guifg=yellow gui=bold,undercurl
+      --     hi fFHintWords cterm=undercurl gui=undercurl guisp=yellow
+      --     hi fFPromptSign ctermfg=yellow cterm=bold guifg=yellow gui=bold
+      -- ]])
+      require('fFHighlight').setup({
+          disable_keymap = false,
+          disable_words_hl = false,
+          number_hint_threshold = 3,
+          prompt_sign_define = {text = '✹'}
+      })
+    end,
+    keys = {{'n', 'f'}, {'x', 'f'}, {'n', 'F'}, {'x', 'F'}}
+  }
 }

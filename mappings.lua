@@ -19,7 +19,12 @@ M.disabled = {
 
 M.convenience = {
   n = {
-    [";"] = { ":", ":"}
+    [";"] = { ":", ":" },   -- let's try to switch ; and :
+    [":"] = { ";", ";" }    -- let's try to switch ; and :
+  },
+  v = {
+    [";"] = { ":", ":" },   -- let's try to switch ; and :
+    [":"] = { ";", ";" }    -- let's try to switch ; and :
   },
   i = {
     ["jk"] = { "<esc>l", "escape to normal mode"}
