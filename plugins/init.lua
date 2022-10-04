@@ -171,5 +171,10 @@ return {
       })
     end,
     keys = {{'n', 'f'}, {'x', 'f'}, {'n', 'F'}, {'x', 'F'}}
-  }
+  },
+
+  [ 'Fymyte/rasi.vim' ] = {
+    ft = 'rasi'
+  },
+
 }
