@@ -152,4 +152,10 @@ M.mason = {
   },
 }
 
+M.colorizer = {
+  user_default_options = {
+    RRGGBBAA = true, -- #RRGGBBAA hex codes
+  },
+}
+
 return M
