@@ -17,6 +17,10 @@ M.treesitter = {
     "lua",
     "python",
   },
+  indent = {
+    enable = true,
+    disable = { "python", },
+  }
 }
 
 
