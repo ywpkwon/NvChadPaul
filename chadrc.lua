@@ -8,7 +8,7 @@ local override = require "custom.override"
 
 M.ui = {
   theme_toggle = { "onedark", "one_light" },
-  theme = "onedark", -- default theme
+  theme = "gruvbox", -- default theme
   -- hl_add = require("custom.highlights").new_hlgroups,
   -- hl_override = require("custom.highlights").overriden_hlgroups,
 }
